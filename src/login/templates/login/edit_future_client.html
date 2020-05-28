@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>見込み客作成</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/new_future_client.css' %}">
+</head>
+<body>
+<form name="read" action="/login" method="POST">{% csrf_token %}
+	<div class="row">
+		<div class="col-12">
+			
+
+			<header id="header">
+				
+				<table class="menu" align="center" id="menu">
+					
+					<tr>
+						<th width="20%"><a class="menu-title" href="{% url 'home_display' %}">ホーム</a></th>
+						<th width="20%"><a class="menu-title" href="#">見込み客</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'connection' %}">連絡先</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'business_talk' %}">商談</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'setting_password' %}">設定</a></th>
+					</tr>
+
+				</table>
+			</header>
+			<div class="header2" id="header2"></div>
+			<h3>見込み客情報</h3>
+			<div class="row">
+				<div class="col-4">
+					
+					<table class="client-input-table">
+						{{form.index.as_hidden}}
+						<tr>
+							<th class="client-input-th">{{form.company.label}}</th>
+							<td class="client-input-td">{{form.company}}</td>
+						</tr>
+						<tr>
+							<th class="client-input-th">{{form.TEL.label}}</th>
+							<td class="client-input-td">{{form.TEL}}</td>
+						</tr>
+						<tr>
+							<th class="client-input-th">{{form.mail.label}}</th>
+							<td class="client-input-td">{{form.mail}}</td>
+						</tr>
+						<tr>
+							<th class="client-input-th">{{form.web.label}}</th>
+							<td class="client-input-td">{{form.web}}</td>
+						</tr>
+						<tr>
+							<th class="client-input-th">{{form.stage.label}}</th>
+							<td class="client-input-td">{{form.stage}}</td>
+						</tr>
+						
+						
+					</table>
+				</div>
+				<div class="col-4">
+					
+					
+					<table class="client-input-table">
+						<tr>
+							<th class="client-input-th">{{form.accuracy.label}}</th>
+							<td class="client-input-td">{{form.accuracy}}</td>
+						</tr>
+						<tr>
+							<th class="client-input-th">{{form.name.label}}</th>
+							<td class="client-input-td">{{form.name}}</td>
+						</tr>
+						<tr>
+							<th class="client-input-th">{{form.industry.label}}</th>
+							<td class="client-input-td">{{form.industry}}</td>
+						</tr>
+						<tr>
+							<th class="client-input-th">{{form.revenue.label}}</th>
+							<td class="client-input-td">{{form.revenue}}</td>
+						</tr>
+						<tr>
+							<th class="client-input-th">{{form.address.label}}</th>
+							<td class="client-input-td">{{form.address}}</td>
+						</tr>
+						<!-- <tr>
+							<th class="client-input-th">従業員数</th>
+							<td class="client-input-td"><input type="text" name=""></td>
+						</tr>
+						<tr>
+							<th class="client-input-th">評価</th>
+							<td class="client-input-td"><input type="text" name=""></td>
+						</tr>
+						<tr>
+							<th class="client-input-th">スカイプID</th>
+							<td class="client-input-td"><input type="text" name=""></td>
+						</tr>
+						<tr>
+							<th class="client-input-th">Twitter</th>
+							<td class="client-input-td"><input type="text" name=""></td>
+						</tr> -->
+					</table>
+
+				</div>
+				<div class="col-4">
+					<p>{{form.memo1.label}}</p>
+					   {{form.memo1}}
+					<p>{{form.memo2.label}}</p>
+					{{form.memo2}}
+				</div>
+				<div class="save-btn-box">
+						<button type="submit" class="save-btn" formaction="{% url 'save_client2' %}">保存</button>
+						<button type="submit" class="save-btn" formaction="{% url 'to_connection' %}">連絡先に追加</button>
+				</div>
+
+			<!-- <div class="footer2"></div>
+			<footer id="footer">
+					<h3 class="footer-title">TECHSAPO for CRM</h3>
+			</footer>
+ -->
+		</div>
+	</div>
+	<div class="footer2"></div>
+			<footer id="footer">
+					<h3 class="footer-title">TECHSAPO for CRM</h3>
+			</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</form>
+</body>
+</html>

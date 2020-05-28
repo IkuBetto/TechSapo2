@@ -1,0 +1,391 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ホーム画面</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/home.css' %}">
+	<script type="text/javascript" src="{% static 'admin/js/container_size.js' %}"></script>
+
+</head>
+<body id="body">
+<form name="read" action="/login" method="POST">
+	<div class="row" id="row">
+		<div class="col-12">
+			
+
+			<header id="header">
+				
+				<table class="menu" align="center" id="menu">
+					
+					<tr>
+						<th width="20%"><a class="menu-title" href="#">ホーム</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'client' %}">見込み客</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'connection' %}">連絡先</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'business_talk' %}">商談</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'setting_password' %}">設定</a></th>
+					</tr>
+				</table>
+			</header>
+			<div class="header2" id="header2"></div>
+			<div class="row" id="move">
+				<div class="col-6">
+					<div class="left-container" id="left-container">
+						<h5>今日登録した見込み客</h5>
+						<table class="today-future-client" id="today-future-client">
+							<tr>
+								<th>会社</th>
+								<th>メール</th>
+								<th>電話番号</th>
+								<th>担当者</th>
+							</tr>
+							{% for i in clients %}
+							<tr>
+								<td>{{i.company}}</td>
+								<td>{{i.clients_mail}}</td>
+								<td>{{i.tel}}</td>
+								<td>{{i.clients_name}}</td>
+							</tr>
+							{% endfor %}
+							<!-- <tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr> -->
+
+						</table>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="left-container" id="left-container">
+						<h5>今日の商談</h5>
+						<table class="today-future-client" id="today-future-client">
+							<tr>
+								<th>商談名</th>
+								<th>ステージ</th>
+								<th>取引先名</th>
+								<th>担当者</th>
+							</tr>
+
+							{% for j in business_talk %}
+							<tr>
+								<td>{{j.name}}</td>
+								<td>{{j.stage}}</td>
+								<td>{{j.company}}</td>
+								<td>{{j.client_representive}}</td>
+							</tr>
+							{% endfor %}
+							<!-- <tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr>
+							<tr>
+								<td>孫正義</td>
+								<td>ソフトバンク</td>
+								<td>masa@softbank.com</td>
+								<td>012-3456-7890</td>
+								<td>別当郁</td>
+							</tr> -->
+
+						</table>
+					</div>
+					
+					
+
+				</div>
+			</div>
+				
+
+		</div>
+		<div class="footer-container">
+			<div class="footer2"></div>
+				<footer id="footer">
+						<h3 class="footer-title">TECHSAPO for CRM</h3>
+				</footer>
+		</div>
+	</div>
+	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</form>
+</body>
+</html>

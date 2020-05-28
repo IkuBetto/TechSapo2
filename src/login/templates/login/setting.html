@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>見込み客一覧</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'admin/css/setting.css' %}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static 'admin/js/footer-move2.js' %}"></script>
+	
+</head>
+<body id="body">
+<form name="read" action="/a" method="POST" id="form">{% csrf_token %}
+	<div class="row" id="row">
+		<div class="col-12">
+			<header id="header">
+				
+				<table class="menu" align="center" id="menu">
+					
+					<tr>
+						<th width="20%"><a class="menu-title" href="{% url 'home_display' %}">ホーム</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'client' %}">見込み客</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'connection' %}">連絡先</a></th>
+						<th width="20%"><a class="menu-title" href="{% url 'business_talk' %}">商談</a></th>
+						<th width="20%"><a class="menu-title" href="#">設定</a></th>
+
+					</tr>
+
+				</table>
+			</header>
+			<div class="header2" id="header2"></div>
+			<div class="row" id="move">
+				<div class="col-12">
+						<h3 class="title">アカウント管理</h3>
+						<table border=1 class="setting-table" align="center">
+							<tr>
+								<th>{{form.mail.label}}</th>
+								<th>{{form.password.label}}</th>
+							</tr>
+							<tr>
+								<td>{{form.mail}}</td>
+								<td>{{form.password}}</td>
+
+						</table>
+						<div class="btn-container">
+							<button class="save-btn" type="submit" formaction="{% url 'save_password' %}">保存</button>
+						</div>
+				</div>
+
+				
+			
+			
+				
+			</div>
+			<div class="footer2"></div>
+				<footer id="footer">
+						<h3 class="footer-title">TECHSAPO for CRM</h3>
+				</footer>
+		
+		</div>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</form>
+</body>
+</html>

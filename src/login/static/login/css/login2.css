@@ -1,0 +1,106 @@
+h1{
+	text-align: center;
+	color: #fff;
+}
+header{
+	padding: 30px;
+	background-color: rgb(247,202,172);
+}
+.header2{
+	padding: 10px;
+	background-color: rgb(117,112,112);
+
+}
+h2{
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.row{
+	min-height: 100vh;
+	position: relative;
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 0 !important;
+	padding-left: 0;
+}
+.col-12{
+	margin-right: 0;
+	margin-left: 0;
+	padding-right: 0 !important;
+	padding-left: 0;
+}
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 30px;
+	background-color: rgb(247,202,172);
+}
+.footer2{
+	position: absolute;
+	width: 100%;
+	bottom: 60px;
+	padding: 10px;
+	background-color: rgb(117,112,112);
+}
+table{
+	margin-top: 50px;
+	width: 50%;
+	border-color: rgb(68,114,196);
+}
+td{
+	background-color: rgb(247,202,172);
+	font-size: 30px;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	text-align: center;
+}
+th{
+	background-color: rgb(247,202,172);
+	font-size: 30px;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	
+}
+.under-td{
+	padding-bottom: 70px;
+}
+p{
+	margin-bottom: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+.input-text{
+	width: 50%;
+	height: 40px;
+	
+}
+.btn-place{
+	margin-top: 50px;
+	text-align: center;
+}
+.login-btn{
+	background-color: rgb(68,114,196);
+	border-radius: 5px;
+	color: #fff;
+	border: 1px solid rgb(68,114,196);
+	padding: 10px 50px;
+	cursor: pointer;
+	
+}
+.login-btn:hover{
+	background-color: #77EEFF;
+	color: #fff;
+
+}
+.btn-text{
+	padding: 10px 10px;
+	margin-bottom: 0px;
+	font-size: 20px;
+}
+
+
+

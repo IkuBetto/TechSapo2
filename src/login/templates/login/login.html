@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ログイン</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/admin/css/login2.css">
+	<!-- <script type="text/javascript" src="{% static 'admin/js/footer-move-login.js' %}"></script> -->
+</head>
+<body id="body">
+<form name="read" action="{% url 'home' %}" method="POST">{% csrf_token %}
+	<div class="row" id="move">
+		<div class="col-12">
+			
+
+			<header id="header"></header>
+			<div class="header2" id="header2"></div>
+			<h2>TECHSAPO for CRM</h2>
+			<table align="center">
+				<tr>
+					<th>
+						Sign In
+					</th>
+				<tr>
+					<td>
+						<!-- <input type="text" class="input-text" name="userID" placeholder="ユーザーID"> -->
+						{{form.user_id}}
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="under-td">
+						{{form.password}}
+						<!-- <input type="password" class="input-text" name="password" placeholder="パスワード"> -->
+						
+					</td>
+				</tr>
+			</table>
+			<div class="btn-place">
+			<button class="login-btn" type="submit"><p class="btn-text">ログイン</p></button>
+			</div>
+			{% if error %}
+			<p class="error">{{error}}</p>
+			{% endif %}
+
+		</div>
+	</div>
+	<div class="footer2"></div>
+			<footer></footer>
+	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</form>
+</body>
+</html>
